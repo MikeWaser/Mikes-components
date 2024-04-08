@@ -1,5 +1,6 @@
 import "./App.scss";
 import Tooltip from "./components/Tooltip/Tooltip";
+import Toast from "./components/Toast/Toast";
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
           <button className="tooltipBtn">Tooltip Button</button>
         </Tooltip>
       </div>
+      <Toast message="Success" type="success" />
+      <Toast message="Error" type="error" />
+      <Toast message="Info" type="info" />
     </>
   );
 }
