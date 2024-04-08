@@ -1,0 +1,114 @@
+.tooltip-trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  margin: 3rem 0 0 1rem;
+  position: relative;
+
+  &:hover .tooltip {
+    opacity: 1;
+    margin-top: 0.1rem;
+    animation: tooltipAnimation 0.7s forwards;
+  }
+
+  .tooltipBtn {
+    align-self: center;
+    justify-self: center;
+    width: 7rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+  .tooltip {
+    position: absolute;
+    pointer-events: none;
+    width: 105%;
+    background: black;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 7px;
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      border-style: solid;
+      pointer-events: none;
+    }
+
+    &.top {
+      bottom: 100%;
+      left: 0%;
+      transform: translateX(-50%);
+      margin-bottom: 5px;
+
+      &::after {
+        top: 100%;
+        left: 50%;
+        border-width: 5px;
+        border-color: #333 transparent transparent transparent;
+        transform: translateX(-50%);
+      }
+    }
+
+    &.right {
+      top: 0%;
+      left: 100%;
+      transform: translateY(-50%);
+      margin-left: 5px;
+
+      &::after {
+        top: 50%;
+        right: 100%;
+        border-width: 5px;
+        border-color: transparent #333 transparent transparent;
+        transform: translateY(-50%);
+      }
+    }
+
+    &.bottom {
+      top: 100%;
+      left: 0%;
+      transform: translateX(-50%);
+      margin-top: 5px;
+
+      &::after {
+        bottom: 100%;
+        left: 50%;
+        border-width: 5px;
+        border-color: transparent transparent #333 transparent;
+        transform: translateX(-50%);
+      }
+    }
+
+    &.left {
+      top: 0%;
+      right: 100%;
+      transform: translateY(-50%);
+      margin-right: 5px;
+
+      &::after {
+        top: 50%;
+        left: 100%;
+        border-width: 5px;
+        border-color: transparent transparent transparent #333;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  @keyframes tooltipAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
