@@ -1,6 +1,7 @@
 import "./App.scss";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Tooltip from "./components/Tooltip/Tooltip";
+import Toast from "./components/Toast/Toast";
 
 function App() {
   const items = ["Home", "About", "Services", "Contact"];
@@ -13,6 +14,9 @@ function App() {
           <button className="tooltipBtn">Tooltip Button</button>
         </Tooltip>
       </div>
+      <Toast message="Success" type="success" />
+      <Toast message="Error" type="error" />
+      <Toast message="Info" type="info" />
     </>
   );
 }
